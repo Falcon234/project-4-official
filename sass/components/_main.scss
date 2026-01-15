@@ -1,0 +1,582 @@
+.moving-line{
+    position: relative;
+    height: 173px;
+}
+.moving-line-container{
+    position: absolute;
+    padding-left: 20px;
+    top: -60px;
+    left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    & .first{
+        & p:nth-child(1){
+            position: absolute;
+            bottom: 18px;
+            left: 0;
+           @include input($height:49px,$border:none);
+           width: 218px;
+           background-color: $black;
+           @include text($weight:600, $color:white,$size:21px); 
+        }
+        & p:nth-child(2){
+            position: absolute;
+            top: 55px;
+            left: 55px;
+           @include input($height:49px,$border:none);
+           width: 153px;
+           background-color: $green;
+           @include text($weight:600,$size:20px); 
+        }
+        & p:nth-child(3){
+            position: absolute;
+            top: 30px;
+            left: 145px;
+           @include input($height:49px,$border:none);
+           width: 125px;
+           background-color: $light-green;
+           @include text($weight:600,$size:21px);
+           transform: rotate(31deg); 
+        }
+    }
+    & .second{
+        & p:nth-child(1){
+            position: absolute;
+            bottom: 18px;
+            left: 271px;
+           @include input($height:49px,$border:none);
+           width: 207px;
+           background-color: $green;
+           @include text($weight:600, $size:21px); 
+        }
+        & p:nth-child(2){
+            position: absolute;
+            top: 75px;
+            left: 355px;
+           @include input($height:49px,$border:none);
+           width: 187px;
+           background-color: $black;
+           @include text($weight:600,$color:$green, $size:21px);
+           transform: rotate(17deg); 
+        }
+    }
+    & .third{
+        & p:nth-child(1){
+            position: absolute;
+            bottom: 18px;
+            left: 620px;
+           @include input($height:49px,$border:none);
+           width:151px;
+           background-color: $green;
+           @include text($weight:600,$size:21px); 
+           transform: rotate(180deg); 
+        }
+        & p:nth-child(2){
+            position: absolute;
+            top: 70px;
+            left: 560px;
+           @include input($height:49px,$border:none);
+           width: 133px;
+           background-color: $light-green;
+           @include text($weight:600,$size:20px);
+           transform: rotate(132deg);  
+        }
+    }
+    & .fourth{
+        & p:nth-child(1){
+            position: absolute;
+            bottom: 18px;
+            left: 780px;
+           @include input($height:49px,$border:none);
+           width:213px;
+           background-color: $black;
+           @include text($weight:600,$color:white, $size:21px);  
+        }
+        & p:nth-child(2){
+            position: absolute;
+            top: 70px;
+            left: 920px;
+           @include input($height:49px,$border:none);
+           width: 118px;
+           background-color: $light-green;
+           @include text($weight:600,$size:20px);
+           transform: rotate(34deg);  
+        }
+    }
+    & .fifth{
+        & p:nth-child(1){
+            position: absolute;
+            bottom: 18px;
+            left: 1065px;
+           @include input($height:49px,$border:none);
+           width:123px;
+           background-color: $black;
+           @include text($weight:600,$color:$green, $size:20px); 
+           transform: rotate(180deg); 
+        }
+    }
+    & .sixth{
+        & p:nth-child(1){
+            position: absolute;
+            top: 70px;
+            left: 1235px;
+           @include input($height:49px,$border:none);
+           width:161px;
+           background-color: $light-green;
+           @include text($weight:600,$size:21px); 
+           transform: rotate(148deg); 
+        }
+        & p:nth-child(2){
+            position: absolute;
+            bottom: 18px;
+            left: 1320px;
+           @include input($height:49px,$border:none);
+           width: 111px;
+           background-color: $green;
+           @include text($weight:600,$size:20px);
+           transform: rotate(180deg);  
+        }
+    }
+}
+@media screen and (max-width:768px){
+    .moving-line-container{
+        width: 768px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+@media screen and (max-width:376px){
+    .moving-line-container{
+        width: 375px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+.moving-line-container_el{
+    position: relative;
+    text-align: center;
+     height: 173px;
+    & p{
+        padding-top: 14px;
+        margin: 0;
+    }
+}
+.characters-slider-cont{
+    height: 764px;
+    margin-top: 110px;
+    & h2{
+        margin: 0;
+        @include text($size:44px,$weight:600);
+        & span{
+            @include text($size:44px,$weight:600,$color:white);
+            background-color: $black;
+            border-radius: 60px;
+            padding: 0 15px;
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .characters-slider-cont{
+        height: 1482px;
+        width: 768px;
+        & h2{
+        @include text($size:44px,$weight:600);
+        & span{
+            @include text($size:44px,$weight:600,$color:white);
+        }
+    }
+    }
+}
+@media screen and (max-width:376px) {
+    .characters-slider-cont{
+        height: 1165px;
+        margin-top: 73px;
+         & h2{
+        @include text($size:28px,$weight:600);
+        & span{
+            @include text($size:28px,$weight:600,$color:white);
+        }
+    }
+    }
+}
+.characters-slider{
+    display: flex;
+    position: relative;
+    gap: 32px;
+    margin-top: 64px;
+    overflow: hidden;
+}
+@media screen and (max-width:768px) {
+    .characters-slider{
+        display: block;
+        margin: 64px auto;
+    }
+}
+.ch-img{
+    position: relative;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 504px;
+    height: 644px;
+    border-radius: 50px;
+    background-image: url(/img/mainCharacters/rick.png);
+    @include bg($size:contain,$position:center);
+    background-color: $green;
+}
+@media screen and (max-width:768px) {
+    .ch-img{
+        width: 704px;
+        height: 704px;
+    }
+}
+@media screen and (max-width:376px) {
+    .ch-img{
+        width: 335px;
+        height: 335px;
+    }
+}
+.ch-text{
+    width: 648px;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    background-color: white;
+    & li{
+        border-bottom: 1px solid rgba(17,17,17,15%);
+    } & li:first-of-type{
+        & h3{
+            margin-top: 0;
+        }
+    }
+    & .ch-title{
+        @include text($weight:600,$size:24px);
+    }
+    & p{
+         @include text();
+    }
+}
+@media screen and (max-width:768px) {
+    .ch-text{
+        padding-top: 32px;
+        padding-left: 0;
+        width: 768px;
+    }
+}
+.selected{
+    @include text($weight:600,$size:24px,$color:$green);
+}
+.bg-up{
+    animation: bg-up 2s linear;
+}
+.bg-down{
+    animation: bg-down 2s linear;
+}
+.episodes-slider{
+    height: 744px;
+    margin-top: 110px;
+    padding-top: 100px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    background-color: $black;
+    & h3{
+        @include text($color:white,$weight:600,$size:44px);
+        width: 620px;
+        margin-bottom: 60px;
+        & span{
+            background-color: $green;
+            border-radius: 50px;
+            padding: 0 10px;
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .episodes-slider{
+        margin-top: 125px;
+    }
+}
+@media screen and (max-width:376px) {
+    .episodes-slider{
+        margin-top: 43px;
+        height: 566px;
+        margin-top: 80px;
+         & h3{
+        @include text($color:white,$weight:600,$size:28px);
+        width: 335px;
+        margin-bottom: 33px;
+    }
+    }
+}
+.episodes-slider_container{
+    display: flex;
+    overflow: hidden;
+    gap: 24px;
+    // & .first{
+    //     & li{
+    //         border: 1px solid red;
+    //     }
+    // }
+}
+.episodes-slider_list{
+    display: flex;
+    padding: 0;
+    gap: 24px;
+    & li{
+        width: 278px;
+        height: 314px;
+        border-radius: 25px;
+        border: 2px solid $green;
+    }
+}
+@media screen and (max-width:376px) {
+   .episodes-slider_list{
+    & li{
+        width: 200px;
+        height: 200px;
+    }
+}
+}
+$icons: 'first', 'second' ,'third', 'fourth', 'fifth';
+    @each $icons-items in $icons{
+    .ep_li-#{$icons-items}{
+        background-image: url("/img/other/#{$icons-items}.png");
+    }
+}
+.firstMove{
+animation:moveFirst 5s linear infinite;
+}
+.secondMove{
+animation: moveSecond 5s linear infinite ;
+}
+@keyframes moveFirst{
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+@keyframes moveSecond{
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+}
+.episodes-btn{
+    & a{
+        @include text($weight:600, $size:14px);
+    }
+    @include input($height:42px,$radius:50px,$border:none);
+    width: 113px;
+    margin-left: 1400px;
+    background-color:$green;
+    margin-top: 30px;
+    padding: 10px 24px;
+}
+@media screen and (max-width:768px) {
+    .episodes-btn{
+        margin-left: 600px;
+    }
+}
+@media screen and (max-width:376px) {
+    .episodes-btn{
+        & a{
+        @include text($weight:600, $size:12px);
+    }
+        margin-left: 250px;
+        width: 96px;
+        height: 36;
+        margin-top: 0px;
+        padding: 10px 20px;
+    }
+}
+.footer-main{
+    display: flex;
+    gap: 300px;
+    padding-top: 40px;
+    margin-bottom: 150px;
+}
+@media screen and (max-width:768px) {
+    .footer-main{
+        gap:96px;
+    }
+}
+.footer-content{
+    width: 100vw;
+    display: flex;
+    gap: 300px;
+}
+@media screen and (max-width:768px) {
+ .footer-content{
+    gap: 75px;
+}
+}
+@media screen and (max-width:376px) {
+    .footer-main{
+       flex-wrap: wrap;
+        gap: 50px;
+        margin-bottom: 80px;
+        & .footer-content{
+        width: 44px;
+        display: block;
+}
+    }
+}
+
+.footer-logo{
+    position: relative;
+    width: 225px;
+    height: 120px;
+    background-image: url(/img/other/footer.svg);
+    @include bg($size:99px 84px, $position:15px top);
+}
+@media screen and (max-width:376px) {
+    .footer-logo{
+        width: 149px;
+        height:107px;
+    }
+}
+.rick-logo{
+    @include input($height:49px,$border:none);
+    width:153px;
+    margin: 70px 0 0;
+    @include text($weight:600, $size:20px,$color:white);
+    padding: 14px 24px;
+    background-color: $black;
+}
+@media screen and (max-width:376px) {
+    .rick-logo{
+        width: 120px;
+        height:46x;
+        @include text($weight:600, $size:16px,$color:white);
+    }
+}
+.morty-logo{
+    position: absolute;
+    left: 85px;
+    top: 50px;
+    @include input($height:49px,$border:none,$radius:25px);
+    width:125px;
+    @include text($weight:600, $size:20px);
+    text-align: center;
+    padding: 14px 24px;
+    margin: 0;
+    background-color: $light-green;
+    transform: rotate(32deg);
+}
+@media screen and (max-width:376px) {
+    .morty-logo{
+        width: 97px;
+        height:42px;
+        @include text($weight:600, $size:16px);
+    }
+}
+.footer-nav{
+    padding-top: 30px;
+    & li:first-of-type{
+        margin-bottom: 16px
+    }
+    & a{
+        @include text();
+    }
+}
+@media screen and (max-width:376px) {
+   .footer-nav{
+    padding: 10px 0 0;
+     & a{
+        @include text($size:14px);
+    }
+    line-height: 10px;
+}
+}
+
+.networks{
+    display: flex;
+    gap: 32px;
+    padding-top: 30px;
+    & li{
+        width: 56px;
+        height: 56px;
+        border: 1px solid rgba(17,17,17,15%);
+        border-radius: 15px;
+    }
+    & .net-first{
+            padding: 15px 21px;
+        }
+    & .net-second{
+            padding: 17px 15px;
+        }
+    & .net-third{
+            padding: 15px 15px;
+        }
+}
+@media screen and (max-width:376px) {
+    .networks{
+        gap: 12px;
+        padding: 0px;
+        & li{
+            width: 40px;
+            height:40px;
+            border-radius: 10px;
+        }
+        & .net-first{
+            padding: 10px 10px;
+            & svg{
+                width: 15px;
+                height: 17px;
+            }
+        }
+        & .net-second{
+            padding: 10px 12px;
+            & svg{
+                width: 18px;
+                height: 18px;
+            }
+        }
+        & .net-third{
+            padding: 10px 10px;
+            & svg{
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+.footer-text{
+    @include text($color: rgba(17,17,17,0.4));
+    text-align: center;
+}
+@media screen and (max-width:376px) {
+    .footer-text{
+        @include text($color: rgba(17,17,17,0.4), $size:12px);
+    }
+}
+@keyframes  bg-down {
+    0% {
+       top:0;
+    }
+    60%{
+        top: 1000px;
+    }
+    100%{
+        top: 1000px;
+    }
+}
+@keyframes  bg-up {
+    0% {
+       top:1000px;
+    }
+     60%{
+        top: 0;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+@keyframes  lineMove {
+    0% {
+        left:1700px;
+    }
+    55%{
+        left: -100px;
+    }
+    100%{
+        left: -1500px;
+    }
+}

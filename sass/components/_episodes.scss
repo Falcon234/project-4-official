@@ -1,0 +1,274 @@
+.hero-ep-img{
+    width: 504px;
+    height: 504px;
+    background-color:$green ;
+    border-radius: 90px;
+    @include bg($size:465px 497px, $position: left 25px);
+    background-image: url(/img/other/ep-hero.png);
+}
+@media screen and (max-width:768px){
+    .hero-ep-img{
+        width: 346px;
+        height: 346px;
+        border-radius: 50px;
+        @include bg($size:290px 342px, $position: left 15px);
+    }
+}
+@media screen and (max-width:376px){
+    .hero-ep-img{
+        width: 335px;
+        height: 335px;
+        border-radius: 25px;
+        @include bg($size:303px 324px, $position: left 15px);
+    }
+}
+.ep-homeback{
+    margin-top: 31px;
+}
+.filer-title{
+    @include text($size:14px);
+}
+.filter-ep{
+    display: flex;
+    gap: 16px;
+    padding-left: 370px;
+    position: absolute;
+   & .search-ep{
+    @include input($border:solid 1.8px $black, $height:50px,$radius:25px);
+            @include text($size:14px,$color:$black);
+            width: 233px;
+            background-color: $light-green;
+            padding: 16px 24px;
+            @include bg($position:200px 16px, $size:18px 18px);
+            background-image: url(/img/other/dark-search.svg);
+            &::placeholder{
+                @include text($size:14px,$color:$black);
+            }
+   }
+   & .season-selector{
+        width: 190px;
+        height: 50px;
+        padding: 16px 24px;
+        @include input($border:solid 1.8px $black, $height:50px,$radius:25px);
+        @include text($size:14px,$color:$black);
+        appearance: none; 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url(/img/other/arrow-down.svg);
+         @include bg($position:150px 16px , $size:18px 18px);
+        &:hover{
+            cursor: url('/img/other/cursor.svg'), auto;
+        }
+        & p {
+            margin: 0;
+        }
+    }
+    & .selector-list{
+        display: none;
+        height: 185px;
+        overflow-y: auto;
+        margin-top: 0;
+        background-color: white;
+        border: 1px solid $black;
+        border-top: none;
+        border-radius: 25px;
+        padding: 15px 20px;
+        line-height: 25px;
+        color: rgba(17,17,17,0.3);
+        & ul{
+            padding-left: 20px;
+        }
+        & .season{
+            @include text($size:14px,$color:rgba(17,17,17,0.3),$weight:600);
+        }
+        & .season:hover{
+            @include text($size:14px,$color:$green,$weight:600);
+            cursor: url('/img/other/cursor.svg'), auto;
+        }
+        & p{
+            margin: 0;
+        }
+        & li{
+            & .series-list{
+                display: none;
+            }
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .filter-ep{
+        width: 768px;
+        padding: 0 165px;
+    }
+}
+@media screen and (max-width:376px) {
+    .filter-ep{
+        display: block;
+        padding: 0;
+        width: 376px;
+        & .search-ep{
+            width: 335px;
+            @include bg($position:290px 16px, $size:18px 18px);
+        }
+        & .season-selector{
+            width: 335px;
+            @include bg($position:290px 16px, $size:18px 18px);
+        }
+        & .selector-list{
+            padding: 15px 50px;
+        }
+    }
+}
+.series-list {
+    & li:hover{
+        color: $black;
+        cursor: url('/img/other/cursor.svg'), auto;
+    }
+}
+.list-title{
+    @include text($size:14px,$color:rgba(17,17,17,0.3));
+    &:hover{
+        color: $black;
+        cursor: url('/img/other/cursor.svg'), auto;
+    }
+}
+.episodes-cont{
+    display: flex;
+    gap: 16px;
+    padding-top: 140px;
+    width: 1184px;
+    flex-wrap: wrap;
+    padding-left: 0;
+    & li{
+        width: 284px;
+        height: 200px;
+        padding: 15px;
+        border: 1px solid $light-green;
+        border-radius: 25px;
+        @include bg();
+    }
+}
+@media screen and (max-width:768px){
+    .episodes-cont{
+        width: 704px;
+        gap: 32px;
+        & li{
+            width: 336px;
+            height: 250px;
+        }
+    }
+}
+@media screen and (max-width:376px){
+    .episodes-cont{
+        padding-top: 230px;
+        width: 376px;
+        gap: 32px;
+        & li{
+            width: 336px;
+            height: 250px;
+        }
+    }
+}
+.first-season{
+    background-image: url(/img/other/season1.png); 
+    background-color:#0D171D;
+}
+.second-season{
+    background-image: url(/img/other/season2.png); 
+    background-color:#0D171D;
+}
+.third-season{
+    background-image: url(/img/other/season3.png); 
+    background-color:#0D171D;
+}
+.fourth-season{
+    background-image: url(/img/other/season4.png); 
+    background-color:#0D171D;
+}
+.fifth-season{
+    background-image: url(/img/other/season5.png); 
+    background-color:#0D171D;
+}
+.ep-title{
+    @include text($weight:600, $color:$light-green);
+    margin: 0 0 90px;
+}
+@media screen and (max-width:768px){
+    .ep-title{
+        @include text($weight:600, $color:$light-green);
+        margin: 0 0 130px;
+}
+}
+.ep-content{
+    display: flex;
+    gap: 17px;
+    & p{
+        @include text($size:12px, $color:rgba(white,0.5));
+        & span{
+            @include text($size:12px, $color:white);
+        }
+        line-height: 20px;
+    }
+}
+.ep-more{
+    margin-bottom: 125px;
+}
+
+.modal-ep{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 673px;
+    height: 370px;
+    background-color: $black;
+    border-radius: 25px;
+}
+.close-ep{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border-radius: 100%;
+    background: inherit;
+    border: none;
+}
+.modap-ep-content{
+    width: 609px;
+    height: 306px;
+    border: 2px solid $light-green ;
+    border-radius: 25px;
+    margin: 30px;
+    padding: 30px;
+    & .ep-title{
+        @include text($weight:600, $size: 24px, $color:white);
+        margin: 0;
+    }
+    & .ep-info{
+        display: flex;
+        gap: 32px;
+        padding: 0;
+    }
+}
+.ep-info-txt{
+    @include text( $size: 12px,  $color:rgba(white,0.5));
+    line-height: 25px;
+    margin: 0;
+    & span{
+        @include text($color:white);
+        }
+}
+.modal-ch-arr{
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    & li{
+        display: flex;
+        gap: 15px;
+        & img{
+            border-radius: 10px;
+        }
+        & p{
+            @include text($color:white,$size:12px); 
+        }   
+    }
+}
